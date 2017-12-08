@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LoginApp</title>
+  <link rel="stylesheet" href="/css/bootstrap.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+</head>
+<body>
+  <div class="container">
+   <div class="header clearfix">
+     <nav>
+       <ul class="nav nav-pills float-right">
+				 {{#if user}}
+         <li><a class="nav-link active" href="/">DashBoard <span class="sr-only">(current)</span></a>
+         </li>
+				 <li><a class="nav-link" href="/users/logout">LogOut</a>
+					{{else}}
+
+         <li><a class="nav-link" href="/users/login">LogIn</a>
+         </li>
+         <li><a class="nav-link" href="/users/register">Register</a>
+         </li>
+				 {{/if}}
+
+				</ul>
+     </nav>
+     <h3 class="text-muted">LoginApp</h3>
+   </div>
+
+
+   <div class="row">
+     <div class="col-lg-12">
+			 {{#if success_msg}}
+					 <div class="alert alert-success">{{success_msg}}</div>
+				 {{/if}}
+
+				 {{#if error_msg}}
+					 <div class="alert alert-danger">{{error_msg}}</div>
+				 {{/if}}
+
+				 {{#if error}}
+					 <div class="alert alert-danger">{{error}}</div>
+				 {{/if}}
+       {{{body}}}
+     </div>
+
+   </div>
+
+   <footer class="footer">
+     <p>&copy; LoginApp 2017</p>
+   </footer>
+
+ </div> <!-- /container -->
+</body>
+</html>
